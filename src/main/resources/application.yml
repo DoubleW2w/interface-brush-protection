@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: interface-brush-protection
+  datasource:
+    url: jdbc:mysql://localhost:3306/my_test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    lettuce:
+      shutdown-timeout: 100ms
+      pool:
+        enabled: true
+        max-active: 8
+        max-idle: 8
+        max-wait: 1ms
+        min-idle: 0
+
+# 自定义配置
+interfaceAccess:
+    second: 100
+    time: 3
+    lockTime: 120
